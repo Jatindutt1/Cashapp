@@ -1,5 +1,5 @@
 import Logo from 'src/component/Logo'
-import { Box, Button, Container, Link, makeStyles } from '@material-ui/core'
+import { Box, Button, Container, Hidden, Link, makeStyles } from '@material-ui/core'
 import React from 'react'
 
 const useStyles = makeStyles((theme) => ({
@@ -26,6 +26,12 @@ padding:"5px 0px",
       fontFamily:" 'Archivo Black', sans-serif",
       fontSize:"12px",
       color:"#fff",textTransform:"uppercase",
+    },
+    "& .eyeButton":{
+      [theme.breakpoints.down("md")]:{
+
+        maxWidth:"50px"
+      }
     }
   }
 }))
@@ -73,6 +79,8 @@ export default function TopBar() {
             <Logo className="logoImg" />
           </Link>
         </Box>
+        <Hidden mdDown>
+
         <Box>
           {ButtonData.map((value) => (
 
@@ -83,8 +91,9 @@ export default function TopBar() {
             </Button>
           ))}
         </Box>
+        </Hidden>
         <Button>
-        <img src='images/eyebutton.svg' alt=''/>
+        <img src='images/eyebutton.svg' alt=''className='eyeButton' />
         </Button>
         </Box>
        

@@ -20,6 +20,8 @@ body {
    transform: translate(-50%, -50%);
    transition: 0.1s;
    z-index: 999;
+   mix-blend-mode: difference;
+
 }
 .cursor2{
    position: fixed;
@@ -31,8 +33,9 @@ body {
    top: 0;
    pointer-events: none;
    transform: translate(-50%, -50%);
-   transition: 0.15s;
+   transition: 0.25s;
    z-index: 999;
+   mix-blend-mode: difference;
 
 }
 
@@ -43,7 +46,16 @@ body {
     max-width: 1400px;
     z-index: 1;
     transform: translate(-50%, -50%);
+    // animation: rotate 30s infinite linear;
 }
+@keyframes rotate {
+    from {
+      -webkit-transform: translate(-50%, -50%) rotate(0deg) ;
+    }
+    to {
+      -webkit-transform: translate(-50%, -50%) rotate(359deg);
+    }
+  }
 
 .parallex {
     pointer-events: none;
@@ -52,12 +64,13 @@ body {
 
 .cube-img {
     position: absolute;
-    // top: calc(50% - 100px);
-    // left: calc(50% - 300px);
     top: 12%;
     left: 18%;
     z-index: 2;
     transform: translate(-50%, -50%);
+    @media screen and (max-width: 425px) {
+       max-width: 50px !important;
+      }
 }
 
 .cubess-img {
@@ -67,6 +80,9 @@ body {
     z-index: 2;
 
     transform: translate(-50%, -50%);
+    @media screen and (max-width: 425px) {
+        max-width: 150px !important;
+       }
 }
 
 .piller-img {
@@ -74,17 +90,21 @@ body {
     top: 91%;
     left: 73%;
     z-index: 2;
-
     transform: translate(-50%, -50%);
+    @media screen and (max-width: 425px) {
+        max-width: 150px !important;
+       }
 }
 
 .stairs-img {
     position: absolute;
-    top: 25%;
-    left: 78%;
+    top: 30%;
+    left: 80%;
     z-index: 2;
-
     transform: translate(-50%, -50%);
+    @media screen and (max-width: 425px) {
+        max-width: 150px !important;
+       }
 }
 
 .phone-img {
@@ -93,6 +113,9 @@ body {
     left: 50%;
 
     transform: translate(-50%, -50%);
+    @media screen and (max-width: 425px) {
+        max-width: 150px !important;
+       }
 }
 
 .text-box {
@@ -113,6 +136,10 @@ body {
     margin: 0;
     line-height: 170px;
     font-size: 200px;
+    @media screen and (max-width: 425px) {
+        font-size: 80px !important;
+
+       }
 
 }
 
@@ -125,6 +152,10 @@ body {
     color: #fff;
     margin: 0;
     font-size: 200px;
+    @media screen and (max-width: 425px) {
+        font-size: 80px !important;
+
+       }
 
 }
 
@@ -191,6 +222,10 @@ body {
 }
 .paraBox img{
     cursor: pointer;
+    transition: 0.5s all;
+}
+.paraBox img:hover{
+  transform: translateY(-5px);
 }
 .glow-on-hover {
     height: 40px;
@@ -243,25 +278,3 @@ body {
     100% { background-position: 0 0; }
 }
 
-.rotate {
-    animation: rotate 0.9s linear infinite;
-    ;
-}
-
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg) scale(1) translate(-50%, -50%);
-    }
-
-    10% {
-        transform: rotate(15deg) scale(1) translate(-50%, -50%);
-    }
-
-    50% {
-        transform: rotate(-180deg) scale(1.4) translate(-50%, -50%);
-    }
-
-    100% {
-        transform: rotate(-360deg) scale(1) translate(-50%, -50%);
-    }
-}

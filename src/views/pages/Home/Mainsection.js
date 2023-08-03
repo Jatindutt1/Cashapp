@@ -1,4 +1,4 @@
-import { Box, Button, Typography, makeStyles } from '@material-ui/core'
+import { Box, Button, Hidden, Typography, makeStyles } from '@material-ui/core'
 import React, { useEffect } from 'react'
 
 const useStyles = makeStyles((theme) => ({
@@ -7,11 +7,52 @@ const useStyles = makeStyles((theme) => ({
     width: "100vw",
     backgroundColor: "#000",
     overflow: "hidden",
-    // display:"flex",
-    // justifyContent:"center",
-    // alignItems:"center",
-    // flexDirection:"column"
-    position: "relative"
+    position: "relative",
+    "& .phone-img":{
+      [theme.breakpoints.down("md")]:{
+        maxWidth:"300px",
+        width:"100%"
+      },
+      [theme.breakpoints.down("sm")]:{
+        maxWidth:"180px",
+        width:"100%"
+      }
+
+    },
+    "& .bottomBox2":{
+      [theme.breakpoints.down("sm")]:{
+       display:"block"
+      },
+    },
+    "& .paraBox":{
+      [theme.breakpoints.down("sm")]:{
+       justifyContent:"space-between"
+      },
+    },
+    "& .text-box":{
+      "& h1":{
+        [theme.breakpoints.down("md")]:{
+          lineHeight: "130px",
+          fontSize:"150px"
+        },
+        [theme.breakpoints.down("sm")]:{
+          lineHeight: "80px",
+          fontSize:"100px"
+        },
+      },
+      "& h2":{
+        [theme.breakpoints.down("md")]:{
+          lineHeight: "130px",
+
+          fontSize:"150px"
+        },
+        [theme.breakpoints.down("sm")]:{
+          lineHeight: "80px",
+
+          fontSize:"100px"
+        },
+      },
+    }
   }
 }))
 
@@ -91,9 +132,12 @@ export default function Mainsection() {
                   Brokerage services by Cash App Investing LLC, member FINRA / SIPC.
                   See our BrokerCheck. Investing involves risk; you may lose money. Bitcoin trading offered by Cash App. Cash App Investing does not trade bitcoin and Cash App is not a member of FINRA or SIPC. Cash App facilitates banking services through Sutton Bank and Lincoln Savings Bank, Members FDIC.
                 </p>
+                <Hidden smDown>
+
                 <img src='images/diss.svg' />
                 <img src='images/twitter.svg' />
                 <img src='images/insta.svg' />
+                </Hidden>
               </Box>
             </Box>
           </Box>
