@@ -1,0 +1,92 @@
+body {
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #fff;
+}
+
+.bg-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 1400px;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+.parallex {
+  pointer-events: none;
+}
+
+.cube-img {
+  position: absolute;
+  top: 12%;
+  left: 18%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+}
+
+.cubess-img {
+  position: absolute;
+  top: 82%;
+  left: 22%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+}
+
+.piller-img {
+  position: absolute;
+  top: 91%;
+  left: 73%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+}
+
+.stairs-img {
+  position: absolute;
+  top: 25%;
+  left: 78%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+}
+
+.phone-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  text-transform: uppercase;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.text-box h1 {
+  font-weight: 900;
+  font-family: "Archivo Black", sans-serif;
+  color: #fff;
+  margin: 0;
+  line-height: 170px;
+  font-size: 200px;
+}
+
+.text-box h2 {
+  line-height: 170px;
+  z-index: 3;
+  position: relative;
+  font-weight: 900;
+  font-family: "Archivo Black", sans-serif;
+  color: #fff;
+  margin: 0;
+  font-size: 200px;
+}/*# sourceMappingURL=main.css.map */
