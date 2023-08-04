@@ -1,5 +1,6 @@
 import { Box, Button, Hidden, Typography, makeStyles } from '@material-ui/core'
 import React, { useEffect } from 'react'
+import { gsap } from 'gsap';
 
 const useStyles = makeStyles((theme) => ({
   mainSectionBox: {
@@ -8,50 +9,62 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#000",
     overflow: "hidden",
     position: "relative",
-    "& .phone-img":{
-      [theme.breakpoints.down("md")]:{
-        maxWidth:"300px",
-        width:"100%"
+    "& .phone-img": {
+      [theme.breakpoints.down("md")]: {
+        maxWidth: "300px",
+        width: "100%"
       },
-      [theme.breakpoints.down("sm")]:{
-        maxWidth:"180px",
-        width:"100%"
+      [theme.breakpoints.down("sm")]: {
+        maxWidth: "180px",
+        width: "100%"
       }
 
     },
-    "& .bottomBox2":{
-      [theme.breakpoints.down("sm")]:{
-       display:"block"
+    "& .bottomBox2": {
+      [theme.breakpoints.down("sm")]: {
+        display: "block"
       },
     },
-    "& .paraBox":{
-      [theme.breakpoints.down("sm")]:{
-       justifyContent:"space-between"
+    "& .paraBox": {
+      [theme.breakpoints.down("sm")]: {
+        justifyContent: "space-between"
       },
     },
-    "& .text-box":{
-      "& h1":{
-        [theme.breakpoints.down("md")]:{
+    "& .text-box": {
+      "& h1": {
+        [theme.breakpoints.down("md")]: {
           lineHeight: "130px",
-          fontSize:"150px"
+          fontSize: "150px"
         },
-        [theme.breakpoints.down("sm")]:{
+        [theme.breakpoints.down("sm")]: {
           lineHeight: "80px",
-          fontSize:"100px"
+          fontSize: "100px"
         },
       },
-      "& h2":{
-        [theme.breakpoints.down("md")]:{
+      "& h2": {
+        [theme.breakpoints.down("md")]: {
           lineHeight: "130px",
 
-          fontSize:"150px"
+          fontSize: "150px"
         },
-        [theme.breakpoints.down("sm")]:{
+        [theme.breakpoints.down("sm")]: {
           lineHeight: "80px",
 
-          fontSize:"100px"
+          fontSize: "100px"
         },
       },
+    },
+    "& .paraBox": {
+      "& p": {
+        [theme.breakpoints.down("sm")]: {
+          borderRadius: "5px",
+          padding: "2px",
+          backdropFilter: "blur(5px)",
+          background: "#000000ad",
+        },
+
+      }
+
     }
   }
 }))
@@ -59,15 +72,17 @@ const useStyles = makeStyles((theme) => ({
 export default function Mainsection() {
   const classes = useStyles();
   useEffect(() => {
+  
     const parallaxAll = document.querySelectorAll(".parallex");
     let cursor = document.querySelector(".cursor")
     let cursor2 = document.querySelector(".cursor2")
+
     const handleMouseMove = (e) => {
-      // cursor.style.cssText = cursor2.style.cssText = "left: " + e.clientX + "px;, top " + e.clientY + "px;";
-      cursor.style.left = e.clientX +"px";
-      cursor2.style.left = e.clientX +"px";
-      cursor.style.top = e.clientY +"px";
-      cursor2.style.top = e.clientY +"px";
+   
+      cursor.style.left = e.clientX + "px";
+      cursor2.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+      cursor2.style.top = e.clientY + "px";
       const xValue = e.clientX - window.innerWidth / 2;
       const yValue = e.clientY - window.innerHeight / 2;
 
@@ -82,10 +97,7 @@ export default function Mainsection() {
 
       });
     };
-    // let timeline = gsap.timeline();
-    // timeline.from(".cube-img",{
-    //   opacity:"0"
-    // })
+
 
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -98,6 +110,11 @@ export default function Mainsection() {
 
   return (
     <Box className={classes.mainSectionBox}>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="shooting-star"></div>
       <img src='images/Vector.png' alt='cube' data-speedx="0.030" data-speedy="0.010" className='parallex bg-img' />
       <img src='images/cube.svg' alt='cube' data-speedx="0.030" data-speedy="0.015" className='parallex cube-img' />
       <img src='images/piller.svg' alt='cube' data-speedx="0.10" data-speedy="0.030" className='parallex piller-img' />
@@ -134,9 +151,9 @@ export default function Mainsection() {
                 </p>
                 <Hidden smDown>
 
-                <img src='images/diss.svg' />
-                <img src='images/twitter.svg' />
-                <img src='images/insta.svg' />
+                  <img src='images/diss.svg' />
+                  <img src='images/twitter.svg' />
+                  <img src='images/insta.svg' />
                 </Hidden>
               </Box>
             </Box>
@@ -153,6 +170,7 @@ export default function Mainsection() {
       <Box className='cursor2'>
 
       </Box>
+
     </Box>
   )
 }

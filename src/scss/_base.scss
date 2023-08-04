@@ -46,7 +46,10 @@ body {
     max-width: 1400px;
     z-index: 1;
     transform: translate(-50%, -50%);
-    // animation: rotate 30s infinite linear;
+    animation: rotate 40s infinite linear;
+    @media screen and (max-width: 768px) {
+        max-width: 1000px;
+       }
 }
 @keyframes rotate {
     from {
@@ -71,7 +74,9 @@ body {
     @media screen and (max-width: 425px) {
        max-width: 50px !important;
       }
+
 }
+
 
 .cubess-img {
     position: absolute;
@@ -202,18 +207,7 @@ body {
     cursor: pointer;
     transform: translate(-50%);
 }
-.bounceBox{
-    animation: bounce 1s infinite alternate;
 
-}
-@keyframes bounce {
-    from {
-      margin-top: 0;
-    }
-    to {
-      margin-top: -250px;
-    }
-  }
 
 .paraBox{
     display: flex;
@@ -277,4 +271,72 @@ body {
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
+.star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 999;
+    box-shadow: 1px 1px 10px 2px #fff;
+    opacity: 1;
+    animation: shineAndBlink 3s infinite;
+  }
+  
+  @keyframes shineAndBlink {
+    0% {
+      transform: scale(0);
+      opacity: 0.4;
+    }
+    50% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(0);
+      opacity: 0.4;
+    }
+  }
+  
+  /* Positioning the stars randomly on the night sky */
+  .star:nth-child(1) {
+    top: 150px;
+    left: 200px;
+  }
+  
+  .star:nth-child(2) {
+    top: 150px;
+    right: 140px;
+  }
+  
+  .star:nth-child(3) {
+    bottom: 123px;
+    right: 136px;
+  }
+  .star:nth-child(4) {
+    bottom: 200px;
+    left: 70px;
+  }
+  
+.shooting-star {
+    position: absolute;
+    top: 50px;
+    right: -100px;
+    width: 100px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.8);
+    clip-path: polygon(0 0, 70% 0, 100% 50%, 70% 100%, 0 100%);
+    animation: shootingStar 4s linear infinite;
+  }
+  
+  @keyframes shootingStar {
+    0% {
+      transform: translateX(0);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateX(calc(100% + 100px));
+      opacity: 0;
+    }
+  }
 

@@ -10,6 +10,11 @@ const useStyles = makeStyles((theme) => ({
     zIndex:"999",
     width:"100%",
     padding:"0.9rem 0",
+    [theme.breakpoints.down("sm")]:{
+    padding:"0.2rem 0",
+    backdropFilter:"blur(2px)"
+
+    }
   },
   TopbarBox2: {
     maxWidth:"1300px",
@@ -92,7 +97,7 @@ export default function TopBar() {
           ))}
         </Box>
         </Hidden>
-        <Button>
+        <Button className='mainEyeButton'>
         <img src='images/eyebutton.svg' alt=''className='eyeButton' />
         </Button>
         </Box>
